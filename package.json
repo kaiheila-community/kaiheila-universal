@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "",
   "scripts": {
+    "dev": "tsc && electron dist/main.js",
     "build": "tsc",
     "start": "electron dist/main.js",
     "lint": "eslint . --ext .js,.ts --ignore-path .gitignore --fix"
