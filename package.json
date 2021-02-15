@@ -1,0 +1,39 @@
+{
+  "name": "kaiheila-universal",
+  "version": "0.1.0",
+  "description": "",
+  "scripts": {
+    "build": "tsc",
+    "start": "electron dist/main.js",
+    "lint": "eslint . --ext .js,.ts --ignore-path .gitignore --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaiheila-community/kaiheila-universal.git"
+  },
+  "keywords": [
+    "kaiheila",
+    "mac",
+    "linux",
+    "universal",
+    "electron"
+  ],
+  "author": "Il Harper",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kaiheila-community/kaiheila-universal/issues"
+  },
+  "homepage": "https://github.com/kaiheila-community/kaiheila-universal#readme",
+  "devDependencies": {
+    "@types/node": "^14.14.27",
+    "@typescript-eslint/eslint-plugin": "^4.15.0",
+    "@typescript-eslint/parser": "^4.15.0",
+    "cross-env": "^7.0.3",
+    "electron": "^11.2.3",
+    "eslint": "^7.20.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "prettier": "^2.2.1",
+    "typescript": "^4.1.5"
+  }
+}
