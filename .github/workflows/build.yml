@@ -38,7 +38,7 @@ jobs:
 
     - name: Remove Unpacked Files
       shell: bash
-      run: rm -rf win-unpacked/ mac/ linux-unpacked/
+      run: rm -rf .build/win-unpacked/ .build/mac/ .build/mac-unpacked/ .build/linux-unpacked/
 
     - name: Push Artifacts
       uses: actions/upload-artifact@v2
