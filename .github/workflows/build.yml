@@ -37,6 +37,7 @@ jobs:
       run: npx electron-builder -c electron-builder.config.js --${{ fromJson(matrix.target).platform }}
 
     - name: Remove Unpacked Files
+      shell: bash
       run: rm -rf win-unpacked/ mac/ linux-unpacked/
 
     - name: Push Artifacts
