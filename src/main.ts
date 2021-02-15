@@ -3,24 +3,26 @@ import { autoUpdater } from 'electron-updater'
 import * as path from 'path'
 import log = require('electron-log')
 
+const userAgent =
+  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4407.0 Safari/537.36 KaiheilaUni/0.1'
+
 let mainWindow: BrowserWindow
 let tray: Tray
 
 // Config Auto Updater
 autoUpdater.logger = log
-log.info('App starting...')
 
 // Utils
+const preventWindowClose = function (e: Electron.Event) {
+  e.preventDefault()
+  mainWindow.hide()
+}
+
 const quitApp = function () {
   mainWindow.removeListener('close', preventWindowClose)
   mainWindow.close()
   app.quit()
   app.quit()
-}
-
-const preventWindowClose = function (e: Electron.Event) {
-  e.preventDefault()
-  mainWindow.hide()
 }
 
 // Config App Menu
@@ -72,8 +74,7 @@ function initializeWindow() {
   mainWindow.on('close', preventWindowClose)
 
   mainWindow.loadURL('https://kaiheila.cn/app', {
-    userAgent:
-      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4407.0 Safari/537.36 KaiheilaUni/0.1',
+    userAgent,
   })
 }
 
