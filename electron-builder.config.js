@@ -3,12 +3,10 @@ module.exports = {
   appId: 'cn.kaiheila.kaiheila-uni',
   directories: {
     output: '.build',
-    buildResources: 'resources',
   },
   files: [
     'dist/**/*',
     'resources/**/*',
-    'resources/kaiheila*',
     'package.json',
     '**/node_modules/**/*',
   ],
