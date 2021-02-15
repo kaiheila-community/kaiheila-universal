@@ -9,7 +9,7 @@ const preventWindowClose = function (e: Electron.Event) {
   mainWindow.hide()
 }
 
-const iconPath = path.join(__dirname, '../resource/kaiheila-uni.ico')
+const iconPath = path.join(__dirname, '../resources/kaiheila-uni.ico')
 const trayMenuTemplate = [
   {
     label: '退出',
