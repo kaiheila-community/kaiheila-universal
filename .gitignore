@@ -91,3 +91,6 @@ sw.*
 
 # Temp files
 temp/
+
+# Build files
+.build/

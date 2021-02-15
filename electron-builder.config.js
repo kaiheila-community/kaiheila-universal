@@ -1,5 +1,5 @@
 module.exports = {
-  productName: '开黑啦',
+  productName: 'Kaiheila',
   appId: 'cn.kaiheila.kaiheila-uni',
   directories: {
     output: '.build',
@@ -39,7 +39,7 @@ module.exports = {
   },
   linux: {
     category: 'Network',
-    synopsis: '开黑啦',
+    synopsis: 'Kaiheila',
     icon: 'resources/kaiheila-uni.png',
     target: 'AppImage',
   },
