@@ -1,4 +1,4 @@
-import { app, BrowserWindow, Menu, Tray } from 'electron'
+import { app, BrowserWindow, Menu, nativeImage, Tray } from 'electron'
 import { pathResolve } from '../utils'
 import { IInitializable } from './types'
 
@@ -11,7 +11,7 @@ export class UniShell implements IInitializable {
   private mainWindow: BrowserWindow
   private tray: Tray
 
-  private iconPath = pathResolve('../resources/kaiheila-uni.ico')
+  private iconPath = pathResolve('../resources/kaiheila-uni.png')
 
   // Initialize Methods
   private initializeWindow(): void {
@@ -39,7 +39,12 @@ export class UniShell implements IInitializable {
 
   private initializeTray(): void {
     // Initialize Tray
-    this.tray = new Tray(this.iconPath)
+    console.log(this.iconPath)
+    let img = nativeImage.createFromPath(this.iconPath)
+    // you need to use 16x16 icon on macos
+    img = img.resize({ width: 16, height: 16 })
+    // img.setTemplateImage(true)
+    this.tray = new Tray(img)
     this.tray.setToolTip('开黑啦')
     this.tray.setContextMenu(Menu.buildFromTemplate(this.trayMenuTemplate))
     this.tray.on('click', (): void => {
