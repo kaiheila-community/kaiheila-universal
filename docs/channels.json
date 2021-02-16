@@ -1,0 +1,60 @@
+[
+  {
+    "type": "card",
+    "theme": "secondary",
+    "size": "lg",
+    "modules": [
+      {
+        "type": "header",
+        "text": {
+          "type": "plain-text",
+          "content": "频道说明"
+        }
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "kmarkdown",
+          "content": "(chn)5972487133309989(chn)：服务器内的相关通知。"
+        }
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "kmarkdown",
+          "content": "(chn)3123072979358436(chn)：「开黑啦通用版」的版本路线，以及对近期版本开发的说明。"
+        }
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "kmarkdown",
+          "content": "(chn)2595322988841418(chn)：版本更新说明。"
+        }
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "kmarkdown",
+          "content": "(chn)6646079708496146(chn)：你可以在这里畅所欲言。"
+        }
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "kmarkdown",
+          "content": "(chn)6785617003852190(chn)：你可以在这里进行反馈和提出建议。"
+        }
+      }
+    ]
+  }
+]
