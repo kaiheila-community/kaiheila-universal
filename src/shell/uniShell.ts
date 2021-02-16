@@ -1,4 +1,4 @@
-import { app, BrowserWindow, Menu, nativeImage, Tray } from 'electron'
+import { app, BrowserWindow, Menu, NativeImage, Tray } from 'electron'
 import { pathResolve } from '../utils'
 import { IInitializable } from './types'
 
