@@ -11,7 +11,12 @@ export class UniShell implements IInitializable {
   private mainWindow: BrowserWindow
   private tray: Tray
 
-  private iconPath = pathResolve('../resources/kaiheila-uni.ico')
+  private iconPath =
+    process.platform === 'darwin'
+      ? pathResolve('../resources/kaiheila-uniTemplate.png')
+      : process.platform === 'win32'
+      ? pathResolve('../resources/kaiheila-uni.ico')
+      : pathResolve('../resources/kaiheila-uni.png')
 
   // Initialize Methods
   private initializeWindow(): void {
