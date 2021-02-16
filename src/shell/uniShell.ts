@@ -1,4 +1,4 @@
-import { app, BrowserWindow, Menu, NativeImage, Tray } from 'electron'
+import { app, BrowserWindow, Menu, nativeImage, Tray } from 'electron'
 import { pathResolve } from '../utils'
 import { IInitializable } from './types'
 
@@ -45,7 +45,7 @@ export class UniShell implements IInitializable {
   private initializeTray(): void {
     // Initialize Tray
     if (isMac) {
-      const img = NativeImage.createFromPath(this.iconPath).resize({
+      const img = nativeImage.createFromPath(this.iconPath).resize({
         width: 16,
         height: 16,
       })
