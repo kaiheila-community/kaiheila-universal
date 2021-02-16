@@ -1,0 +1,109 @@
+[
+  {
+    "type": "card",
+    "theme": "primary",
+    "size": "lg",
+    "modules": [
+      {
+        "type": "header",
+        "text": {
+          "type": "plain-text",
+          "content": "欢迎来到「开黑啦 Universal」交流服务器！"
+        }
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "plain-text",
+          "content": "「开黑啦通用版」是使用 Electron 对开黑啦的封装，使之可以在大多数 PC 系统上原生运行。"
+        }
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "header",
+        "text": {
+          "type": "plain-text",
+          "content": "沟通与交流"
+        }
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "plain-text",
+          "content": "交流 QQ 群：146912326"
+        }
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "header",
+        "text": {
+          "type": "plain-text",
+          "content": "下载"
+        }
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "kmarkdown",
+          "content": "正式版可以在这里获取：[版本发行](https://delivr.vbox.moe/kaiheila-uni/releases)"
+        }
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "plain-text",
+          "content": "下表是系统和所需要下载文件的对应表。"
+        }
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "paragraph",
+          "cols": 3,
+          "fields": [
+            {
+              "type": "kmarkdown",
+              "content": "**Windows**\n.exe"
+            },
+            {
+              "type": "kmarkdown",
+              "content": "**MacOS**\n.dmg"
+            },
+            {
+              "type": "kmarkdown",
+              "content": "**Linux**\n.AppImage"
+            }
+          ]
+        }
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "plain-text",
+          "content": "如果版本发行链接在你所在的地区访问速度较慢，你可以加入上面的「交流 QQ 群」，并在群文件下载「开黑啦通用版」。"
+        }
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "header",
+        "text": {
+          "type": "plain-text",
+          "content": "免责声明"
+        }
+      },
+      {
+        "type": "section",
+        "text": {
+          "type": "kmarkdown",
+          "content": "我们的免责声明随时都可能更新，请以 [此处](https://github.com/kaiheila-community/kaiheila-universal/blob/master/DISCLAIMER.md) 的版本为准。"
+        }
+      }
+    ]
+  }
+]
