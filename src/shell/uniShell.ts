@@ -4,6 +4,7 @@ import { IInitializable } from './types'
 
 const userAgent =
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4407.0 Safari/537.36 KaiheilaUni/0.1'
+const isMac = process.platform === 'darwin'
 
 export class UniShell implements IInitializable {
   // Shell Components
@@ -65,7 +66,7 @@ export class UniShell implements IInitializable {
   private quitApp = this.quitAppIntl.bind(this)
 
   private preventWindowCloseIntl(e: Electron.Event): void {
-    e.preventDefault()
+    if (e.preventDefault) e.preventDefault()
     this.mainWindow.hide()
   }
 
@@ -85,12 +86,56 @@ export class UniShell implements IInitializable {
           label: '关于开黑啦 Universal',
           role: 'about',
         },
+        { type: 'separator' },
+        { label: '服务', role: 'services', enabled: isMac },
+        { type: 'separator' },
+        {
+          label: '隐藏',
+          accelerator: isMac ? 'Command+H' : 'Ctrl+H',
+          click: this.preventWindowClose,
+        },
+        { label: '解除隐藏', role: 'unhide', enabled: isMac },
+        { type: 'separator' },
         {
           label: '退出',
-          accelerator: process.platform === 'darwin' ? 'Command+Q' : undefined,
+          accelerator: isMac ? 'Command+Q' : 'Ctrl+Q',
           click: this.quitApp,
         },
       ],
+    },
+    {
+      label: '编辑',
+      submenu: [
+        { label: '撤销', role: 'undo' },
+        { label: '重做', role: 'redo' },
+        { type: 'separator' },
+        { label: '剪切', role: 'cut' },
+        { label: '拷贝', role: 'copy' },
+        { label: '粘贴', role: 'paste' },
+        { label: '删除', role: 'delete' },
+        { type: 'separator' },
+        { label: '选择全部', role: 'selectAll' },
+        { type: 'separator' },
+        { label: '开始听写', role: 'startSpeaking', enabled: isMac },
+        { label: '停止听写', role: 'stopSpeaking', enabled: isMac },
+      ],
+    },
+    {
+      label: '浏览',
+      submenu: [
+        { label: '重载', role: 'reload' },
+        { label: '强制重载', role: 'forceReload' },
+        { type: 'separator' },
+        { label: '实际大小', role: 'resetZoom' },
+        { label: '放大', role: 'zoomIn' },
+        { label: '缩小', role: 'zoomOut' },
+        { type: 'separator' },
+        { label: '切换全屏幕', role: 'togglefullscreen' },
+      ],
+    },
+    {
+      label: '预览',
+      submenu: [{ label: '切换开发者工具', role: 'toggleDevTools' }],
     },
   ]
   private trayMenuTemplate: Electron.MenuItemConstructorOptions[] = [
