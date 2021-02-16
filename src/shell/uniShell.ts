@@ -11,7 +11,12 @@ export class UniShell implements IInitializable {
   private mainWindow: BrowserWindow
   private tray: Tray
 
-  private iconPath = pathResolve('../resources/kaiheila-uni.png')
+  private iconPath =
+    process.platform === 'darwin'
+      ? pathResolve('../resources/kaiheila-uniTemplate.png')
+      : process.platform === 'win32'
+      ? pathResolve('../resources/kaiheila-uni.ico')
+      : pathResolve('../resources/kaiheila-uni.png')
 
   // Initialize Methods
   private initializeWindow(): void {
@@ -39,12 +44,16 @@ export class UniShell implements IInitializable {
 
   private initializeTray(): void {
     // Initialize Tray
-    console.log(this.iconPath)
-    let img = nativeImage.createFromPath(this.iconPath)
-    // you need to use 16x16 icon on macos
-    img = img.resize({ width: 16, height: 16 })
-    // img.setTemplateImage(true)
-    this.tray = new Tray(img)
+    if (isMac) {
+      const img = NativeImage.createFromPath(this.iconPath).resize({
+        width: 16,
+        height: 16,
+      })
+      img.setTemplateImage(true)
+      this.tray = new Tray(img)
+    } else {
+      this.tray = new Tray(this.iconPath)
+    }
     this.tray.setToolTip('开黑啦')
     this.tray.setContextMenu(Menu.buildFromTemplate(this.trayMenuTemplate))
     this.tray.on('click', (): void => {
